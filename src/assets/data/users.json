@@ -1,9 +1,9 @@
 [
-    {"firstName":"Maria","lastName":"Anders","userName":"MariaAnders","password":"1234","role":"user","active":true},
-    {"firstName":"Moreno Taqueria","lastName":"Antonio","userName":"Antonio","password":"","role":"","active":true},
-    {"firstName":"the Horn","lastName":"Around","userName":"user","password":"1234","role":"user","active":true},
-    {"firstName":"Handel","lastName":"Ernst","userName":"admin","password":"134","role":"admin","active":true},
-    {"firstName":"elabbade","lastName":"mouad","userName":"mouad","password":"1234","role":"admin","active":true},
-    {"firstName":"harry","lastName":"potter","userName":"harry","password":"123","role":"user","active":false},
-    {"firstName":"iron","lastName":"man","userName":"ironman","password":"123","role":"admin","active":false}
+    {"firstName":"Maria","lastName":"Anders","userName":"MariaAnders","password":"1234","picture":"assets/pictures/profile-1.png","role":"user","active":true},
+    {"firstName":"Moreno Taqueria","lastName":"Antonio","userName":"Antonio","password":"1234","picture":"assets/pictures/profile-2.png","role":"","active":true},
+    {"firstName":"the Horn","lastName":"Around","userName":"user","password":"1234","picture":"assets/pictures/profile-3.png","role":"user","active":true},
+    {"firstName":"Handel","lastName":"Ernst","userName":"admin","password":"134","picture":"assets/pictures/profile-4.png","role":"admin","active":true},
+    {"firstName":"elabbade","lastName":"mouad","userName":"mouad","password":"1234","picture":"assets/pictures/profile-5.jpg","role":"admin","active":true},
+    {"firstName":"harry","lastName":"potter","userName":"harry","password":"123","picture":"assets/pictures/profile-6.jpg","role":"user","active":false},
+    {"firstName":"iron","lastName":"man","userName":"ironman","password":"123","picture":"assets/pictures/profile-7.png","role":"admin","active":false}
 ]
