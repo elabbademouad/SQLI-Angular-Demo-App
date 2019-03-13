@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

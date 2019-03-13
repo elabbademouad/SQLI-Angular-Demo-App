@@ -1,0 +1,13 @@
+<div class="row z-depth-3" style="width: 600px;margin: auto;">
+  <div *ngFor="let p of properties" class="col">
+      <input *ngIf="p.type === 'string'" [(ngModel)]="p.value" placeholder="{{p.name}}"  type="text" >
+      <input *ngIf="p.type==='number'" [(ngModel)]="p.value" placeholder="{{p.name}}"  type="text" >
+      <label  *ngIf="p.type === 'boolean'" >
+          <input  type="checkbox" [(ngModel)]="p.value" class="filled-in" checked="checked" />
+          <span style="margin-top: 22px;">{{p.name}}</span>
+      </label>
+  </div>
+  <div class="col right" >
+      <a style="margin-top: 6px;" class="waves-effect waves-light btn"><i class="material-icons ">search</i></a>
+  </div>
+</div>
