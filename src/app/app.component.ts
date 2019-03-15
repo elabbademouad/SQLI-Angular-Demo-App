@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SQLI-Angular-Demo-App';
-  property:string="gool,date,some";
+  constructor(){}
 }
