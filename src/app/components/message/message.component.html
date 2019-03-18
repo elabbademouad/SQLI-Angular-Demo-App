@@ -1,0 +1,12 @@
+<div *ngIf="display">
+  <div *ngIf="message.status==='error'" class="row z-depth-2 red lighten-1" style="height: 60px;margin: 4px;padding: 2px;padding-left:10px;  font-style: italic;border: solid;border-radius: 4px;border-width: 0px;">
+    <p class="grey-text text-darken-4">Error : {{message.message}}</p>
+  </div>
+  <div *ngIf="message.status==='success'" class="row z-depth-2 green lighten-1" style="height: 60px;margin: 4px;padding: 2px;padding-left:10px;  font-style: italic;border: solid;border-radius: 4px;border-width: 0px;">
+    <p class="grey-text text-darken-4" >Success : {{message.message}}</p>
+  </div>
+  <div *ngIf="message.status==='warning'" class="row z-depth-2 orange lighten-1" style="height: 60px;margin: 4px;padding: 2px;padding-left:10px;  font-style: italic;border: solid;border-radius: 4px;border-width: 0px;">
+    <p class="grey-text text-darken-4" >Warning : {{message.message}} </p>
+  </div>
+  
+</div>
