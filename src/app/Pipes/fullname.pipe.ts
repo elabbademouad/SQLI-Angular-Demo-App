@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { User } from '../Model/user';
 
 @Pipe({
-  name: 'example'
+  name: 'fullname'
 })
-export class ExamplePipe implements PipeTransform {
+export class fullnamePipe implements PipeTransform {
 
   transform(value: User): any {
     return value.firstName + " " + value.lastName;

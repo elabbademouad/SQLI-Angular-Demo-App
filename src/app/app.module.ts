@@ -8,13 +8,13 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule} from '@angular/forms';
 import { MessageComponent } from './components/message/message.component';
 import { AuthorizeDirective } from './directives/authorize.directive'
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule,Routes} from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserslistComponent } from './components/userslist/userslist.component';
 import { UsersfilterComponent } from './components/usersfilter/usersfilter.component';
 import { StatusUserDirective } from './directives/status-user.directive';
-import { ExamplePipe } from './Pipes/example.pipe';
+import { fullnamePipe } from './Pipes/fullname.pipe';
 import { AboutComponent } from './components/about/about.component';
 
 const appRoute:Routes=[
@@ -36,7 +36,7 @@ const appRoute:Routes=[
     UserslistComponent,
     UsersfilterComponent,
     StatusUserDirective,
-    ExamplePipe,
+    fullnamePipe,
     AboutComponent
   ],
   imports: [
