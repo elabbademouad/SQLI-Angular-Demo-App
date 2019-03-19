@@ -1,0 +1,26 @@
+<div class="row z-depth-3" style="width: 90%;margin: auto;">
+  <div class="col">
+      <input class="input-field inline" placeholder="First name" [(ngModel)]="filter.firstName" type="text" >
+  </div>
+  <div class="col">
+      <input class="input-field inline" placeholder="Last name" [(ngModel)]="filter.lastName"  type="text" >
+  </div>
+  <div class="col">
+      <input class="input-field inline" placeholder="Username" [(ngModel)]="filter.userName"  type="text" >
+  </div>
+  <div class="col ">
+      <select class="browser-default" [(ngModel)]="filter.role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+      </select>
+  </div>
+  <div class="col ">
+      <select class="browser-default" [(ngModel)]="filter.active">
+          <option value="true">Active</option>
+          <option value="false">Inactive</option>
+      </select>
+  </div>
+  <div class="col right" >
+      <a style="margin-top: 6px;" (click)="filterClick()"  class="waves-effect waves-light btn blue darken-2 "><i class="material-icons " >search</i></a>
+  </div>
+</div>

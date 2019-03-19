@@ -30,4 +30,15 @@ export class UserService {
   setCurrentUser(user:User){
     this.currentUserSubject.next(user);
   }
+  addUser(user:User):boolean{
+     let userfromData=this.getUserByUserName(user.userName);
+     if(userfromData!==null){
+       return false;
+     }else{
+        let users=this.getAllUsers();
+        users.push(user);
+        localStorage.setItem("users",JSON.stringify(users));
+        return true;
+     }
+  }
 }

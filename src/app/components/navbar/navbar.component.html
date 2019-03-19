@@ -3,17 +3,14 @@
       <div class="nav-wrapper z-depth-2" >
       <a class="brand-logo "><img style="width: 45px;height: 45px;vertical-align: middle;margin-left: 4px;" src="{{logUrl}}"/>{{title}}</a>
       <ul class="right ">
-          <li><a>Resources</a></li>
-          <li><a>About</a></li>
+          <li><a href="assets/resources.zip">Resources</a></li>
+          <li><a routerLink="about">About</a></li>
+          <li><a routerLink="login">Login</a></li>
       </ul>
       </div>
       <div *ngIf="currentUser" class="nav-wrapper z-depth-2" >
-      <ul class="left ">
-          <li><a>link 1</a></li>
-          <li><a>link 2</a></li>
-          <li><a>link 3</a></li>
-          <li><a>link 4</a></li>
-          <li><a>link 5</a></li>
+      <ul class="left">
+          <li appAuthorize [role]="currentUser.role"><a routerLink="userslist" >Users</a></li>
       </ul>
       <ul class="right">
           <li><a><img style="width: 45px;height: 45px;vertical-align: middle;border-radius: 50%;" src="{{currentUser.picture}}"/> {{currentUser.userName}}<span style="font-weight: 600;" class="new badge teal darken-1" [attr.data-badge-caption]="currentUser.role"></span></a></li>

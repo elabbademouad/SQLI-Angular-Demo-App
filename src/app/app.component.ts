@@ -13,6 +13,7 @@ export class AppComponent{
   constructor(public _dataService:DataService,public http:HttpClient){
     //Init data in localStorage
     this._dataService.initData();
+
   }
   ngOnInit(){
   }

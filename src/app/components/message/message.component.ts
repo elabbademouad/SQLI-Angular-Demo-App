@@ -15,7 +15,7 @@ export class MessageComponent  {
     this.messageServic.getMessage().subscribe((message:Message)=>{
       this.message=message;
       this.display=true;
-      setTimeout(()=>{this.display=false;},3000);
+      setTimeout(()=>{this.display=false;},1050);
     })
   }
   message:Message;

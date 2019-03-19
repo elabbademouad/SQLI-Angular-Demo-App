@@ -1,0 +1,38 @@
+<app-usersfilter (filterChanged)="handleFilterChanged($event)"></app-usersfilter>
+<table style="width: 60%; margin: auto;" class="highlight">       
+  <thead>
+      <tr>
+          <th class="grey-text  text-darken-2">UserName</th>
+          <th class="grey-text  text-darken-2">First name</th>
+          <th class="grey-text  text-darken-2">Last name</th>
+          <th class="grey-text  text-darken-2">Password</th>
+          <th class="grey-text  text-darken-2">Role</th>
+          <th class="grey-text  text-darken-2">Active</th>
+          <th class="grey-text  text-darken-2">Edit</th>
+      </tr>
+  </thead>
+  <tr *ngFor="let userRow of users">
+      <td>{{userRow.user.userName}}</td>
+      <td *ngIf="!userRow.editMode">{{userRow.user.firstName}}</td>
+      <td *ngIf="userRow.editMode"><input type="text"  [(ngModel)]="userRow.user.firstName" /></td>
+      <td *ngIf="!userRow.editMode">{{userRow.user.lastName}}</td>
+      <td *ngIf="userRow.editMode"><input type="text" [(ngModel)]="userRow.user.lastName" /></td>
+      <td>{{userRow.user.password}}</td>
+      <td>{{userRow.user.role}}</td>
+      <td *ngIf="!userRow.editMode">
+        <div appStatusUser [status]="userRow.user.active" style="height:20px ;width: 20px; border: solid;border-radius: 50px;border-width: 0px;" ></div>
+      </td>
+      <td *ngIf="userRow.editMode">
+        <label>
+            <input type="checkbox" class="filled-in" [(ngModel)]="userRow.user.active"/>
+            <span></span>
+        </label>
+      </td>
+      <td>
+        <a style="cursor: pointer;" (click)="edit(userRow)">
+            <i *ngIf="!userRow.editMode" class="material-icons left" >edit</i>
+            <i *ngIf="userRow.editMode" class="material-icons left" >save</i>
+        </a>
+      </td>
+  </tr>
+</table>
