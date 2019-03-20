@@ -1,23 +1,26 @@
 <div class="card" style="width: 400px; margin: auto; margin-top: 6%; margin-bottom: 10%;">
   <div class="card-content">
-      <div  class="row">
+      <form #loginForm="ngForm" class="row">
           <img style="margin: 10px;" src="assets/pictures/logo.png"/>
           <div class="input-field col s12">
-              <input placeholder="UserName"  [(ngModel)]="login.userName" type="text">
-          </div>
+              <input placeholder="UserName"  [(ngModel)]="login.userName"  #userName="ngModel"  name="userName" required type="text">
+              <span style="color: red;" *ngIf="userName.invalid &&  (userName.dirty || userName.touched)" >* User name is required </span>
+        </div>
+          
           <div class="input-field col s12">
-              <input placeholder="Passwords" [(ngModel)]="login.password" type="password">
+              <input placeholder="Passwords" #password="ngModel" required [(ngModel)]="login.password" name="password"  type="password">
+              <span style="color: red;" *ngIf="password.invalid && (password.dirty || password.touched)" >* Password is required </span>
           </div>
           <div>           
           </div>
           <div class="col s12">
               <a class="waves-effect" routerLink="/register">Register</a>
-              <a class="waves-effect waves-light blue darken-2  btn right" (click)="handleLoginClick()">Login</a>
+              <input [disabled]="loginForm.invalid" class="waves-effect waves-light blue darken-2  btn right" type="submit" (click)="handleLoginClick()" value="Login"/>
           </div>
           <div>
-              <p>User : ashovelin8 1234 user</p>
-              <p>User : cyukhnev4 1234 admin</p>
+              <p>ashovelin8 1234 (user)</p>
+              <p>cyukhnev4 1234 (admin)</p>
           </div>   
-      </div>
+      </form>
   </div>  
 </div>

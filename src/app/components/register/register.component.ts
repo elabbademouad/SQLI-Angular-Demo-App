@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   constructor(public authService:AuthenticationService) { 
     this.user=new User();
   }
-
+  confirmPass:string;
   ngOnInit() {
   }
 

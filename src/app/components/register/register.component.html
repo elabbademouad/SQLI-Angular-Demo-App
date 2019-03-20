@@ -1,32 +1,36 @@
 <div class="card" style="width: 600px; margin: auto; margin-top: 6%; margin-bottom: 6%;">
   <div class="card-content">
-      <div  class="row">
+      <form #registerForm="ngForm"  class="row">
           <div class="col s12">
               <img style="margin: 10px;"  src="assets/pictures/logo.png"/>
           </div>    
           <div class="input-field col s6">
               <span class="grey-text ">First name :</span>
-              <input placeholder="First name" [(ngModel)]="user.firstName" type="text">
+              <input placeholder="First name" maxlength="20" name="firstName" #firstName="ngModel"   [(ngModel)]="user.firstName" type="text">
+             
           </div>
           <div class="input-field col s6">
               <span class="grey-text ">Last name :</span>
-              <input placeholder="Last name" [(ngModel)]="user.lastName" type="text">
+              <input placeholder="Last name" [(ngModel)]="user.lastName" name="lastName" type="text">
           </div>
           <div class="input-field col s12">
               <span class="grey-text ">User name :</span>
-              <input placeholder="User name" [(ngModel)]="user.userName" type="text">
+              <input placeholder="User name" #userName="ngModel" name="userName" required [(ngModel)]="user.userName" type="text">
+              <span *ngIf="userName.invalid && (userName.dirty || userName.touched)" style="color: red;" >* user name is required</span>
           </div>
           <div class="input-field col s12">
               <span class="grey-text ">Passwords :</span>
-              <input placeholder="Passwords" [(ngModel)]="user.password"  type="password">
+              <input #password="ngModel" name="password" required placeholder="Passwords" [(ngModel)]="user.password"  type="password">
+              <span *ngIf="password.invalid && (password.dirty || password.touched)" style="color: red;" >* password is required</span>
           </div>
           <div class="input-field col s12">
               <span class="grey-text ">Confirm passwords :</span>
-              <input placeholder="Passwords" type="password">
+              <input placeholder="Passwords" #confirmPassword="ngModel"  [(ngModel)]="confirmPass" name="confirmPassword" type="password">
+              <span *ngIf="password.value !== confirmPassword.value && (confirmPassword.dirty || confirmPassword.touched)" style="color: red;" >*confirm password no match password</span>
           </div>
           <div class="input-field col s12">
               <span class="grey-text "  >Picture URL :</span>
-              <input placeholder="Picture URL" [(ngModel)]="user.picture" type="text">
+              <input placeholder="Picture URL" [(ngModel)]="user.picture" name="picture" type="text">
           </div>
           <div class="col s12 input-field ">
               <span>
@@ -43,8 +47,8 @@
               </span>
           </div> 
           <div class="col s12">
-              <a class="waves-effect waves-light blue darken-2 btn right" (click)="register()">Submit</a>
+              <input [disabled]="registerForm.invalid || password.value !== confirmPassword.value" class="waves-effect waves-light blue darken-2 btn right" type="submit" value="Submit" (click)="register()"/>
           </div>
-      </div>
+      </form>
   </div>
 </div>

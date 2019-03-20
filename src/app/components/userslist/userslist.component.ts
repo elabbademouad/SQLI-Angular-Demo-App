@@ -26,11 +26,9 @@ export class UserslistComponent implements OnInit {
   ngOnInit() {
   }
   handleFilterChanged(filter:UserFilter){
-      let users=this.userService.getAllUsers().filter((item)=>{debugger
-        let ff=!isNullOrUndefined(filter.firstName);
+      let users=this.userService.getAllUsers().filter((item)=>{
         let conditionCount=0;
         let conditionTrueCount=0;
-        let exists=true;
         if(!isNullOrUndefined(filter.firstName) ){
           conditionCount++;
            if(item.firstName.includes(filter.firstName)){

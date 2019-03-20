@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Login } from 'src/app/Model/login';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { MessageService } from 'src/app/services/message.service';
@@ -20,8 +20,8 @@ export class LoginComponent  {
               public route:ActivatedRoute,) { 
     this.login=new Login();
   }
-
   handleLoginClick(){
+    debugger
     let user=this.authService.login(this.login);
      if(user){
       this.userService.setCurrentUser(user)
