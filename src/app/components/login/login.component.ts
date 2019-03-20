@@ -4,7 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { MessageService } from 'src/app/services/message.service';
 import { UserService } from 'src/app/services/user.service';
 import { isNullOrUndefined } from 'util';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +17,15 @@ export class LoginComponent  {
   constructor(public authService:AuthenticationService,
               public messageService:MessageService,
               public userService:UserService, 
-              public route:ActivatedRoute,) { 
+              public route:Router,) { 
     this.login=new Login();
+    this.userService.getCurrentUser().subscribe((data)=>{
+        if(data !==null){
+          this.route.navigate(['postslist']);
+        }
+    })
   }
   handleLoginClick(){
-    debugger
     let user=this.authService.login(this.login);
      if(user){
       this.userService.setCurrentUser(user)

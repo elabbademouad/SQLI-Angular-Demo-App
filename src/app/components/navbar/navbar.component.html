@@ -11,6 +11,7 @@
       <div *ngIf="currentUser" class="nav-wrapper z-depth-2" >
       <ul class="left">
           <li appAuthorize [role]="currentUser.role"><a routerLink="userslist" >Users</a></li>
+          <li ><a routerLink="postslist" >Home</a></li>
       </ul>
       <ul class="right">
           <li><a><img style="width: 45px;height: 45px;vertical-align: middle;border-radius: 50%;" src="{{currentUser.picture}}"/> {{currentUser.userName}}<span style="font-weight: 600;" class="new badge teal darken-1" [attr.data-badge-caption]="currentUser.role"></span></a></li>

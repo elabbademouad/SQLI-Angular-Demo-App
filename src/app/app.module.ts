@@ -16,12 +16,16 @@ import { UsersfilterComponent } from './components/usersfilter/usersfilter.compo
 import { StatusUserDirective } from './directives/status-user.directive';
 import { fullnamePipe } from './Pipes/fullname.pipe';
 import { AboutComponent } from './components/about/about.component';
+import { PostComponent } from './components/post/post.component';
+import { PostslistComponent } from './components/postslist/postslist.component';
+import { NewpostComponent } from './components/newpost/newpost.component';
 
 const appRoute:Routes=[
   {path:"login",component:LoginComponent},
   {path:"userslist",component:UserslistComponent},
   {path:"register",component:RegisterComponent},
   {path:"about",component:AboutComponent},
+  {path:"postslist",component:PostslistComponent},
   {path:"",component:LoginComponent}
 ]
 @NgModule({
@@ -37,7 +41,10 @@ const appRoute:Routes=[
     UsersfilterComponent,
     StatusUserDirective,
     fullnamePipe,
-    AboutComponent
+    AboutComponent,
+    PostComponent,
+    PostslistComponent,
+    NewpostComponent
   ],
   imports: [
     BrowserModule,
